@@ -6,7 +6,7 @@ export const App: FC = () => {
       try {
         const response = await tickersApi.getTickers();
 
-        console.log(response);
+        console.log(response.tabA);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
