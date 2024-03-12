@@ -6,13 +6,14 @@ export const getTickers = async (): Promise<{
   tabA: Ticker[];
   tabB: Ticker[];
 }> => {
-  const [tabAResult, tabBResult] = await Promise.all([
-    apiClient.get<TickerResponse[]>(`tickers`, { tab: "A" }),
-    apiClient.get<TickerResponse[]>(`tickers`, { tab: "B" }),
-  ]);
+  const tickersResponse = await apiClient.get<TickerResponse[]>(`tickers`);
 
-  const tabA = mapTickers(tabAResult.data);
-  const tabB = mapTickers(tabBResult.data);
+  const midpoint = Math.ceil(tickersResponse.data.length / 2);
+  const tabAData = tickersResponse.data.slice(0, midpoint);
+  const tabBData = tickersResponse.data.slice(midpoint);
+
+  const tabA = mapTickers(tabAData);
+  const tabB = mapTickers(tabBData);
 
   return { tabA, tabB };
 };
