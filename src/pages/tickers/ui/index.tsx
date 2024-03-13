@@ -1,7 +1,8 @@
 import type { FC } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
 import { useEffect, useState } from "react";
-import { ITicker, TickerTable, useTickerStore } from "@/entities/tickers";
+import { ITicker, useTickerStore } from "@/entities/tickers";
+import { TickerTable } from "@/widgets/TickerTable";
 import { Link } from "react-router-dom";
 
 export const TickersPage: FC = () => {
