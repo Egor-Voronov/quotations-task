@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import type { TickerTableProps } from "./ticker-table.types.ts";
-import styles from "./styles.module.css";
+import type { TickerTableProps } from "./TickerTable.types.ts";
+import styles from "./TickerTable.module.css";
 
 export const TickerTable: FC<TickerTableProps> = ({ data }) => {
   return (

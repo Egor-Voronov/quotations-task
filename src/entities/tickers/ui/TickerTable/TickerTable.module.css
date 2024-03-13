@@ -1,0 +1,25 @@
+.table th {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.table td {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+@keyframes valueChange {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #fffacd; /* Желтоватый цвет для анимации */
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.cell.animate {
+    animation: valueChange 1s;
+}
