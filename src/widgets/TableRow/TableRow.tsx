@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styles from "@/shared/styles/table.module.css";
 import {
   ITableRowTypes,
@@ -10,7 +10,7 @@ const renderCell = <T extends string | number>({
   isChanged,
   onModalOpen,
 }: IRenderCellTypes<T>) => (
-  <td onClick={() => onModalOpen()} className={isChanged ? styles.changed : ""}>
+  <td onClick={onModalOpen} className={isChanged ? styles.changed : ""}>
     {value}
   </td>
 );
@@ -22,8 +22,12 @@ export const TableRow: FC<ITableRowTypes> = ({
 }) => (
   <tr>
     {renderCell({ value: data.symbol, isChanged, onModalOpen })}
-    {renderCell({ value: data.price, isChanged, onModalOpen })}
-    {renderCell({ value: data.bestBidPrice, isChanged, onModalOpen })}
-    {renderCell({ value: data.percentChange, isChanged, onModalOpen })}
+    {Object.values(data)
+      .slice(2)
+      .map((value, index) => (
+        <React.Fragment key={index}>
+          {renderCell({ value, isChanged, onModalOpen })}
+        </React.Fragment>
+      ))}
   </tr>
 );
