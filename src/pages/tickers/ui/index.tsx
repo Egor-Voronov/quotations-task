@@ -10,7 +10,7 @@ export const TickersPage: FC = () => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [tabAData, setTabAData] = useState<ITicker[]>([]);
-  const [tabBData, setTabBData] = useState<ITicker[]>([]);
+  // const [tabBData, setTabBData] = useState<ITicker[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const TickersPage: FC = () => {
           setIsLoading(false);
           setError(null);
           setTabAData(useTickerStore.tabA);
-          setTabBData(useTickerStore.tabB);
+          // setTabBData(useTickerStore.tabB);
         } catch (err) {
           setIsLoading(false);
           setError(`Ошибка: ${err}`);

@@ -1,4 +1,4 @@
-import { ITicker } from "../../index.ts";
+import { ITicker } from "@/entities/tickers";
 
 export interface TickerTableProps {
   data: ITicker[];
