@@ -40,6 +40,8 @@ export const TickersPage: FC = () => {
     return () => clearInterval(intervalId);
   }, [activeTab]);
 
+  // один таб не обновляется, если включен другой
+
   return (
     <>
       <PageLayout>
