@@ -4,7 +4,7 @@ import type { TickerTableProps } from "./TickerTable.types.ts";
 import { TableRow } from "../TableRow";
 import styles from "@/shared/styles/table.module.css";
 
-export const TickerTable: FC<TickerTableProps> = ({ data }) => {
+export const TickerTable: FC<TickerTableProps> = ({ data, onOpenModal }) => {
   const [changedCells, setChangedCells] = useState<Record<string, boolean>>({});
   const prevData = useRef<typeof data>([]);
 
@@ -47,6 +47,7 @@ export const TickerTable: FC<TickerTableProps> = ({ data }) => {
         <tbody>
           {data.map((item) => (
             <TableRow
+              onOpen={onOpenModal}
               key={item.tradeId}
               data={item}
               isChanged={changedCells[item.tradeId]}

@@ -2,10 +2,10 @@ import type { FC } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
 import { useEffect, useState } from "react";
 import { ITicker, tickerStore } from "@/entities/tickers";
-import { TickerTable } from "@/widgets/TickerTable";
-import { TickerModal } from "@/widgets/TickerModal";
+
 import { tickerModalStore } from "@/widgets/TickerModal";
 import { Link } from "react-router-dom";
+import { Tabs } from "@/widgets/Tabs";
 
 export const TickersPage: FC = () => {
   const store = tickerModalStore;
@@ -40,8 +40,6 @@ export const TickersPage: FC = () => {
 
   return (
     <>
-      <TickerModal />
-
       <PageLayout>
         <Link to={"/"}>О приложении</Link>
 
@@ -50,7 +48,7 @@ export const TickersPage: FC = () => {
         ) : error ? (
           <div>{error}</div>
         ) : (
-          <TickerTable data={tabAData} />
+          <Tabs data={tabAData} />
         )}
       </PageLayout>
     </>

@@ -1,18 +1,10 @@
 import { FC, useState } from "react";
 import { Modal } from "@/shared/ui/Modal";
-import { tickerModalStore } from "../store";
+import { ModalLayoutProps } from "@/shared/ui/Modal/Modal.types.ts";
 
-export const TickerModal: FC = () => {
-  const store = tickerModalStore;
-  const [localShowModal, setLocalShowModal] = useState(store.showModal);
-
-  const handleClose = () => {
-    store.closeModal();
-    setLocalShowModal(false);
-  };
-
+export const TickerModal: FC<ModalLayoutProps> = ({ showModal, onClose }) => {
   return (
-    <Modal showModal={localShowModal} onClose={handleClose}>
+    <Modal showModal={showModal} onClose={onClose}>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
       quidem.
     </Modal>

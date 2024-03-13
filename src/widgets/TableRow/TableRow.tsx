@@ -5,16 +5,22 @@ import styles from "@/shared/styles/table.module.css";
 const renderCell = <T extends string | number>(
   value: T,
   isChanged: boolean,
-) => <td className={isChanged ? styles.changed : ""}>{value}</td>;
+  onOpen: () => void,
+) => (
+  <td onClick={() => onOpen()} className={isChanged ? styles.changed : ""}>
+    {value}
+  </td>
+);
 
-export const TableRow: FC<{ data: ITicker; isChanged: boolean }> = ({
-  data,
-  isChanged,
-}) => (
+export const TableRow: FC<{
+  data: ITicker;
+  isChanged: boolean;
+  onOpen: () => void;
+}> = ({ data, isChanged, onOpen }) => (
   <tr>
-    {renderCell(data.symbol, isChanged)}
-    {renderCell(data.price, isChanged)}
-    {renderCell(data.bestBidPrice, isChanged)}
-    {renderCell(data.percentChange, isChanged)}
+    {renderCell(data.symbol, isChanged, onOpen)}
+    {renderCell(data.price, isChanged, onOpen)}
+    {renderCell(data.bestBidPrice, isChanged, onOpen)}
+    {renderCell(data.percentChange, isChanged, onOpen)}
   </tr>
 );

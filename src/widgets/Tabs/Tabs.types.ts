@@ -1,6 +1,5 @@
 import { ITicker } from "@/entities/tickers";
 
-export interface TickerTableProps {
+export interface ITabsProps {
   data: ITicker[];
-  onOpenModal: () => void;
 }
