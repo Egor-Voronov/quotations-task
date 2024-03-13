@@ -1,3 +1,7 @@
+.table {
+    cursor: pointer;
+}
+
 .table th {
     padding: 8px;
     border: 1px solid black;
@@ -6,20 +10,11 @@
 .table td {
     padding: 8px;
     border: 1px solid black;
+
+    transition: background-color 0.3s ease-in-out;
 }
 
-@keyframes valueChange {
-    0% {
-        background-color: transparent;
-    }
-    50% {
-        background-color: #fffacd; /* Желтоватый цвет для анимации */
-    }
-    100% {
-        background-color: transparent;
-    }
-}
 
-.cell.animate {
-    animation: valueChange 1s;
+.table td.changed {
+    background-color: #fffacd;
 }
