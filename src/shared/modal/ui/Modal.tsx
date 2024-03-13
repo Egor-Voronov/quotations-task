@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { ModalLayoutProps } from "../modal.types.ts";
-import styles from "Modal.module.css";
+import styles from "./Modal.module.css";
 import { createPortal } from "react-dom";
 
 export const Modal: FC<ModalLayoutProps> = ({
