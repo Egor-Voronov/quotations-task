@@ -1,3 +1,1 @@
-import { apiClient } from "./base";
-
-export { apiClient };
+export { apiClient } from "./base";

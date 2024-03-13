@@ -1,15 +1,15 @@
 import type { FC } from "react";
-import type { ModalLayoutProps } from "../../ui/Modal/Modal.types.ts";
+import type { IModalLayoutProps } from "../../ui/Modal/Modal.types.ts";
 import styles from "./Modal.module.css";
 import { createPortal } from "react-dom";
 
-export const Modal: FC<ModalLayoutProps> = ({
+export const Modal: FC<IModalLayoutProps> = ({
   children,
   showModal,
-  onClose,
+  onModalClose,
 }) => {
   const handleClose = () => {
-    onClose();
+    onModalClose();
   };
 
   return (

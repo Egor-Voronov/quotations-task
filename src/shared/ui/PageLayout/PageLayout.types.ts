@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface PageLayoutProps {
+export interface IPageLayoutProps {
   children: ReactNode;
 }

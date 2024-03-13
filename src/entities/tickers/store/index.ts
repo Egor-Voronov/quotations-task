@@ -1,3 +1,1 @@
-import { tickerStore } from "./tickers-store.ts";
-
-export { tickerStore };
+export { tickerStore } from "./tickers-store.ts";

@@ -1,3 +1,1 @@
-import { apiClient } from "./api-client.ts";
-
-export { apiClient };
+export { apiClient } from "./api-client.ts";

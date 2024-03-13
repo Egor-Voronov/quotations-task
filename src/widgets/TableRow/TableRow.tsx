@@ -1,26 +1,29 @@
-import type { FC } from "react";
-import type { ITicker } from "@/entities/tickers";
+import { FC } from "react";
 import styles from "@/shared/styles/table.module.css";
+import {
+  ITableRowTypes,
+  IRenderCellTypes,
+} from "@/widgets/TableRow/TableRow.types.ts";
 
-const renderCell = <T extends string | number>(
-  value: T,
-  isChanged: boolean,
-  onOpen: () => void,
-) => (
-  <td onClick={() => onOpen()} className={isChanged ? styles.changed : ""}>
+const renderCell = <T extends string | number>({
+  value,
+  isChanged,
+  onModalOpen,
+}: IRenderCellTypes<T>) => (
+  <td onClick={() => onModalOpen()} className={isChanged ? styles.changed : ""}>
     {value}
   </td>
 );
 
-export const TableRow: FC<{
-  data: ITicker;
-  isChanged: boolean;
-  onOpen: () => void;
-}> = ({ data, isChanged, onOpen }) => (
+export const TableRow: FC<ITableRowTypes> = ({
+  data,
+  isChanged,
+  onModalOpen,
+}) => (
   <tr>
-    {renderCell(data.symbol, isChanged, onOpen)}
-    {renderCell(data.price, isChanged, onOpen)}
-    {renderCell(data.bestBidPrice, isChanged, onOpen)}
-    {renderCell(data.percentChange, isChanged, onOpen)}
+    {renderCell({ value: data.symbol, isChanged, onModalOpen })}
+    {renderCell({ value: data.price, isChanged, onModalOpen })}
+    {renderCell({ value: data.bestBidPrice, isChanged, onModalOpen })}
+    {renderCell({ value: data.percentChange, isChanged, onModalOpen })}
   </tr>
 );

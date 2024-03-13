@@ -1,3 +1,1 @@
-import { TickerModal } from "./TickerModal.tsx";
-
-export { TickerModal };
+export { TickerModal } from "./TickerModal.tsx";

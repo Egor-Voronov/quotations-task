@@ -1,5 +1,2 @@
-import { TickerModal } from "../TickerModal/ui";
-import { tickerModalStore } from "../TickerModal/store";
-
-export { TickerModal };
-export { tickerModalStore };
+export { TickerModal } from "../TickerModal/ui";
+export { tickerModalStore } from "../TickerModal/store";

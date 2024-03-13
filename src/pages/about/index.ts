@@ -1,3 +1,1 @@
-import { AboutPage } from "./ui";
-
-export { AboutPage };
+export { AboutPage } from "./ui";

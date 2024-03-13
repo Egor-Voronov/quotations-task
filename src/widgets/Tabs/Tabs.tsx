@@ -18,8 +18,8 @@ export const Tabs: FC<ITabsProps> = ({ data }) => {
 
   return (
     <>
-      <TickerModal showModal={localShowModal} onClose={handleClose} />
-      <TickerTable data={data} onOpenModal={handleOpen} />
+      <TickerModal showModal={localShowModal} onModalClose={handleClose} />
+      <TickerTable data={data} onModalOpen={handleOpen} />
     </>
   );
 };

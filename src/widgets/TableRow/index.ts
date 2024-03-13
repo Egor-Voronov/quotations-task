@@ -1,3 +1,1 @@
-import { TableRow } from "./TableRow.tsx";
-
-export { TableRow };
+export { TableRow } from "./TableRow.tsx";

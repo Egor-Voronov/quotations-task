@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-export interface ModalLayoutProps {
+export interface IModalLayoutProps {
   children?: ReactNode;
   showModal: boolean;
-  onClose: () => void;
+  onModalClose: () => void;
 }

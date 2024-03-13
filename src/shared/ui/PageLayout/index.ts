@@ -1,3 +1,1 @@
-import { PageLayout } from "./PageLayout.tsx";
-
-export { PageLayout };
+export { PageLayout } from "./PageLayout.tsx";

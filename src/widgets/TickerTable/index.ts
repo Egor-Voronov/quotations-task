@@ -1,3 +1,1 @@
-import { TickerTable } from "./TickerTable.tsx";
-
-export { TickerTable };
+export { TickerTable } from "./TickerTable.tsx";

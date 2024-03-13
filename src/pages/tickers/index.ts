@@ -1,3 +1,1 @@
-import { TickersPage } from "./ui";
-
-export { TickersPage };
+export { TickersPage } from "./ui";
