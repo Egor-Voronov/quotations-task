@@ -35,7 +35,7 @@ export const TickerTable: FC<ITickerTableProps> = ({ data, onModalOpen }) => {
 
   return (
     <div>
-      <table className={styles.table}>
+      <table role="header" className={styles.table}>
         <thead>
           <tr>
             <th>Имя котировки</th>
@@ -44,7 +44,7 @@ export const TickerTable: FC<ITickerTableProps> = ({ data, onModalOpen }) => {
             <th>Изменение цены</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tableContent}>
           {data.map((item) => (
             <TableRow
               onModalOpen={onModalOpen}

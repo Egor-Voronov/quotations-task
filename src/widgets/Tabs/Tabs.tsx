@@ -1,10 +1,9 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ITabsProps } from "./Tabs.types.ts";
 import { TickerTable } from "@/widgets/TickerTable";
 import { TickerModal, tickerModalStore } from "@/widgets/TickerModal";
-import { useState } from "react";
 
-export const Tabs: FC<ITabsProps> = ({ data }) => {
+export const Tabs: FC<ITabsProps> = ({ data, activeTab }) => {
   const store = tickerModalStore;
   const [localShowModal, setLocalShowModal] = useState(store.showModal);
 
@@ -20,12 +19,13 @@ export const Tabs: FC<ITabsProps> = ({ data }) => {
 
   return (
     <>
+      <h1>Активный таб: {activeTab}</h1>
+      {activeTab && <TickerTable data={data} onModalOpen={handleOpen} />}
       <TickerModal
         showModal={localShowModal}
         onModalClose={handleClose}
         data={data}
       />
-      <TickerTable data={data} onModalOpen={handleOpen} />
     </>
   );
 };

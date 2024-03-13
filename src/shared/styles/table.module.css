@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 
-.table tr:hover {
+.tableContent tr:hover {
     opacity: .3;
 }
 
