@@ -1,5 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useTickerStore } from "@/entities/tickers";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router.tsx";
 
 export const App: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,15 +30,5 @@ export const App: FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  return (
-    <>
-      {isLoading ? (
-        <div>Загрузка...</div>
-      ) : error ? (
-        <div>{error}</div>
-      ) : (
-        <div>{tabAData[0].price}</div>
-      )}
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
