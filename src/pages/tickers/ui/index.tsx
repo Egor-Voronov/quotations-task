@@ -5,7 +5,7 @@ import { tickerModalStore } from "@/widgets/TickerModal";
 import { Link } from "react-router-dom";
 import { Tabs } from "@/widgets/Tabs";
 import { Tab } from "@/features/Tab.ts";
-import { Loader } from "@/shared/ui/Loader.tsx";
+import { Loader } from "@/shared/ui/Loader/Loader.tsx";
 
 export const TickersPage: FC = () => {
   const store = tickerModalStore;
@@ -14,6 +14,7 @@ export const TickersPage: FC = () => {
   const [tabAData, setTabAData] = useState<ITicker[]>([]);
   const [tabBData, setTabBData] = useState<ITicker[]>([]);
   const [activeTab, setActiveTab] = useState<Tab>(Tab.A);
+  const [error, setError] = useState<string | null>(null); // Добавлено состояние для ошибки
 
   const handleTabChange = (tab: Tab) => {
     setActiveTab(tab);
@@ -27,8 +28,10 @@ export const TickersPage: FC = () => {
           setIsLoading(false);
           if (activeTab === Tab.A) setTabAData(tickerStore.tabA);
           if (activeTab === Tab.B) setTabBData(tickerStore.tabB);
+          setError(null);
         } catch (err) {
           setIsLoading(false);
+          setError(`${err}`);
         }
       }
     };
@@ -40,13 +43,21 @@ export const TickersPage: FC = () => {
     return () => clearInterval(intervalId);
   }, [activeTab]);
 
-  // один таб не обновляется, если включен другой и если другая страница
+  useEffect(() => {
+    console.log("Таб А получил обновление:", tabAData);
+  }, [tabAData]);
+
+  useEffect(() => {
+    console.log("Tab B получил обновление:", tabBData);
+  }, [tabBData]);
 
   return (
     <>
       <PageLayout>
         <Link to={"/"}>О приложении</Link>
-        {isLoading ? (
+        {error ? (
+          <div>{error}</div>
+        ) : isLoading ? (
           <Loader />
         ) : (
           <div>
