@@ -6,7 +6,6 @@ import { Tab } from "@/features/Tab.ts";
 export const AboutPage: FC = () => {
   return (
     <PageLayout>
-      <Link to={"/tickers"}>К котировкам</Link>
       <Link to={`/tickers?tab=${Tab.A}`}>
         <button>Таб A</button>
       </Link>
