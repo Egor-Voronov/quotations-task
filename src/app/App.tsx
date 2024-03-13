@@ -1,23 +1,42 @@
-import { FC, useEffect } from "react";
-import { tickersApi } from "@/entities/tickers";
-export const App: FC = () => {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await tickersApi.getTickers();
+import { FC, useEffect, useState } from "react";
+import { useTickerStore } from "@/entities/tickers";
 
-        console.log(response.tabA);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+export const App: FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [tabAData, setTabAData] = useState<any[]>([]);
+  const [tabBData, setTabBData] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchTickers = async () => {
+      try {
+        await useTickerStore.fetchTickers();
+        setIsLoading(false);
+        setError(null);
+        setTabAData(useTickerStore.tabA);
+        setTabBData(useTickerStore.tabB);
+      } catch (err) {
+        setIsLoading(false);
+        setError(`Ошибка: ${err}`);
       }
     };
 
-    fetchData();
+    fetchTickers();
+
+    const intervalId = setInterval(fetchTickers, 5000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <>
-      <div>Quotations</div>
+      {isLoading ? (
+        <div>Загрузка...</div>
+      ) : error ? (
+        <div>{error}</div>
+      ) : (
+        <div>{tabAData[0].price}</div>
+      )}
     </>
   );
 };

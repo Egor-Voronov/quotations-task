@@ -1,4 +1,4 @@
-import { TickerResponse, Ticker } from "../tickers.types.ts";
+import { TickerResponse, Ticker } from "../../tickers.types.ts";
 
 const calculatePercentChange = (
   currentPrice: string,
