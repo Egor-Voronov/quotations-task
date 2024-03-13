@@ -15,10 +15,10 @@ export const TickerModal: FC<ITickerModalProps> = ({
       {data?.map((ticker) => {
         return ticker.tradeId === store.selectedTickerId ? (
           <ul key={ticker.tradeId}>
-            <li>Имя котировки {ticker.symbol}</li>
-            <li>Цена котировки {ticker.price}</li>
-            <li>Лучшая цена котировки {ticker.bestBidPrice}</li>
-            <li>Изменение цены котировки {ticker.percentChange}</li>
+            <li>Имя котировки - {ticker.symbol}</li>
+            <li>Цена котировки - {ticker.price}</li>
+            <li>Лучшая цена котировки - {ticker.bestBidPrice}</li>
+            <li>Изменение цены котировки - {ticker.percentChange}</li>
           </ul>
         ) : null;
       })}
