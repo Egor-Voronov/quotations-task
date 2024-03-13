@@ -1,4 +1,4 @@
-import type { Ticker } from "../tickers.types.ts";
+import type { ITicker } from "../tickers.types.ts";
 import { observable, makeObservable, action } from "mobx";
 import { tickersApi } from "../index.ts";
 
@@ -13,8 +13,8 @@ class TickerStore {
     });
   }
 
-  tabA: Ticker[] = [];
-  tabB: Ticker[] = [];
+  tabA: ITicker[] = [];
+  tabB: ITicker[] = [];
 
   async fetchTickers() {
     const { tabA, tabB } = await tickersApi.getTickers();
@@ -22,11 +22,11 @@ class TickerStore {
     this.setTabB(tabB);
   }
 
-  setTabA(tabA: Ticker[]) {
+  setTabA(tabA: ITicker[]) {
     this.tabA = tabA;
   }
 
-  setTabB(tabB: Ticker[]) {
+  setTabB(tabB: ITicker[]) {
     this.tabB = tabB;
   }
 }

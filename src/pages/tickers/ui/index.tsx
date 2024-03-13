@@ -1,12 +1,13 @@
 import type { FC } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
 import { useEffect, useState } from "react";
-import { useTickerStore } from "@/entities/tickers";
+import { ITicker, TickerTable, useTickerStore } from "@/entities/tickers";
+import { Link } from "react-router-dom";
 
 export const TickersPage: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [tabAData, setTabAData] = useState<any[]>([]);
-  const [tabBData, setTabBData] = useState<any[]>([]);
+  const [tabAData, setTabAData] = useState<ITicker[]>([]);
+  const [tabBData, setTabBData] = useState<ITicker[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -32,12 +33,14 @@ export const TickersPage: FC = () => {
 
   return (
     <PageLayout>
+      <Link to={"/"}>О приложении</Link>
+
       {isLoading ? (
         <div>Загрузка...</div>
       ) : error ? (
         <div>{error}</div>
       ) : (
-        <div>{tabAData[0].price}</div>
+        <TickerTable data={tabAData} />
       )}
     </PageLayout>
   );

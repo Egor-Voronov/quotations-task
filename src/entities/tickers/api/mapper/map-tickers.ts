@@ -1,4 +1,4 @@
-import { TickerResponse, Ticker } from "../../tickers.types.ts";
+import { ITickerResponse, ITicker } from "@/entities/tickers";
 
 const calculatePercentChange = (
   currentPrice: string,
@@ -10,7 +10,7 @@ const calculatePercentChange = (
   return current - old;
 };
 
-export const mapTickers = (tickers: TickerResponse[]): Ticker[] => {
+export const mapTickers = (tickers: ITickerResponse[]): ITicker[] => {
   return tickers.map((ticker) => {
     const percentChange = calculatePercentChange(
       ticker.price,

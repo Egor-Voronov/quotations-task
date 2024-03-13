@@ -1,4 +1,4 @@
-export interface ApiResponse<T> {
+export interface IApiResponse<T> {
   /**
    всегда имеющийся ответ data типа T
    */

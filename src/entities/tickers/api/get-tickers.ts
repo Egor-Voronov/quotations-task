@@ -1,13 +1,13 @@
-import type { TickerResponse, Ticker } from "../tickers.types.ts";
+import type { ITickerResponse, ITicker } from "../tickers.types.ts";
 import { apiClient } from "@/shared/api/base";
 import { mapTickers } from "@/entities/tickers/api/mapper/map-tickers.ts";
 
 export const getTickers = async (): Promise<{
-  tabA: Ticker[];
-  tabB: Ticker[];
+  tabA: ITicker[];
+  tabB: ITicker[];
 }> => {
   // тут нет эндпоинта по типу tickers/count - поэтому я не могу взять отдельно разные запросы по половинкам
-  const tickersResponse = await apiClient.get<TickerResponse[]>(`tickers`);
+  const tickersResponse = await apiClient.get<ITickerResponse[]>(`tickers`);
 
   const midpoint = Math.ceil(tickersResponse.data.length / 2);
   const tabAData = tickersResponse.data.slice(0, midpoint);

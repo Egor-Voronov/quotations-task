@@ -1,5 +1,5 @@
 import { API_URL } from "@/shared/config";
-import type { ApiResponse } from "./base.types.ts";
+import type { IApiResponse } from "./base.types.ts";
 
 export class ApiClient {
   private readonly baseUrl: string;
@@ -23,7 +23,7 @@ export class ApiClient {
   public async get<TResult = unknown>(
     endpoint: string,
     queryParams?: Record<string, string | number>,
-  ): Promise<ApiResponse<TResult>> {
+  ): Promise<IApiResponse<TResult>> {
     const url = new URL(endpoint, this.baseUrl);
 
     if (queryParams) {
@@ -40,7 +40,7 @@ export class ApiClient {
       // this headers blocking cors
     });
 
-    return this.handleResponse<ApiResponse<TResult>>(response);
+    return this.handleResponse<IApiResponse<TResult>>(response);
   }
 }
 export const apiClient = new ApiClient(API_URL);

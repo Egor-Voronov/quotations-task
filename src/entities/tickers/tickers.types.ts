@@ -1,4 +1,4 @@
-export interface TickerResponse {
+export interface ITickerResponse {
   /**
     айдишник
    */
@@ -17,7 +17,7 @@ export interface TickerResponse {
   bestBidPrice: string;
 }
 
-export interface Ticker extends TickerResponse {
+export interface ITicker extends ITickerResponse {
   /**
    last - highest bid
    */
