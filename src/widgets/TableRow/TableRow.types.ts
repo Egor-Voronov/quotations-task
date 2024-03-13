@@ -9,3 +9,8 @@ export interface ITableRowTypes {
 export interface IRenderCellTypes<T> extends Omit<ITableRowTypes, "data"> {
   value: T;
 }
+
+export interface IOnCellClickProps {
+  tradeId: string | null;
+  onModalOpen: () => void;
+}
