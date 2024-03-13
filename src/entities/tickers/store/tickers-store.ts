@@ -31,4 +31,4 @@ class TickerStore {
   }
 }
 
-export const useTickerStore = new TickerStore();
+export const tickerStore = new TickerStore();

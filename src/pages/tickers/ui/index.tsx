@@ -1,12 +1,14 @@
 import type { FC } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
 import { useEffect, useState } from "react";
-import { ITicker, useTickerStore } from "@/entities/tickers";
-import { TickerModal, TickerTable, useTickerModalStore } from "@/widgets";
+import { ITicker, tickerStore } from "@/entities/tickers";
+import { TickerTable } from "@/widgets/TickerTable";
+import { TickerModal } from "@/widgets/TickerModal";
+import { tickerModalStore } from "@/widgets/TickerModal";
 import { Link } from "react-router-dom";
 
 export const TickersPage: FC = () => {
-  const store = useTickerModalStore;
+  const store = tickerModalStore;
 
   const [isLoading, setIsLoading] = useState(true);
   const [tabAData, setTabAData] = useState<ITicker[]>([]);
@@ -17,11 +19,11 @@ export const TickersPage: FC = () => {
     const fetchTickers = async () => {
       if (!store.showModal) {
         try {
-          await useTickerStore.fetchTickers();
+          await tickerStore.fetchTickers();
           setIsLoading(false);
           setError(null);
-          setTabAData(useTickerStore.tabA);
-          // setTabBData(useTickerStore.tabB);
+          setTabAData(tickerStore.tabA);
+          // setTabBData(tickerStore.tabB);
         } catch (err) {
           setIsLoading(false);
           setError(`Ошибка: ${err}`);

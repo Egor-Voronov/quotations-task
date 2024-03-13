@@ -1,3 +1,3 @@
-import { useTickerModalStore } from "./ticker-modal-store.ts";
+import { tickerModalStore } from "./ticker-modal-store.ts";
 
-export { useTickerModalStore };
+export { tickerModalStore };

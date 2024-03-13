@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
 import { Modal } from "@/shared/ui/Modal";
-import { useTickerModalStore } from "@/widgets";
+import { tickerModalStore } from "../store";
 
 export const TickerModal: FC = () => {
-  const store = useTickerModalStore;
+  const store = tickerModalStore;
   const [localShowModal, setLocalShowModal] = useState(store.showModal);
 
   const handleClose = () => {

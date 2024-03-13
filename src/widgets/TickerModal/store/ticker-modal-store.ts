@@ -17,4 +17,4 @@ class TickerModalStore extends BaseModalStore {
   }
 }
 
-export const useTickerModalStore = new TickerModalStore();
+export const tickerModalStore = new TickerModalStore();
