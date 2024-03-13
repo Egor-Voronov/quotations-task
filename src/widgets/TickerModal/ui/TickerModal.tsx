@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Modal } from "@/shared/modal";
+import { Modal } from "@/shared/ui/Modal";
 import { useTickerModalStore } from "@/widgets";
 
 export const TickerModal: FC = () => {

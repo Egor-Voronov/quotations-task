@@ -9,7 +9,7 @@ export class BaseModalStore {
     });
   }
 
-  showModal = true;
+  showModal = false;
   openModal() {
     this.showModal = true;
   }
