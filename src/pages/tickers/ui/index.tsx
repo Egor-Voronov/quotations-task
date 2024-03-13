@@ -2,18 +2,21 @@ import { FC, useEffect, useState } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
 import { ITicker, tickerStore } from "@/entities/tickers";
 import { tickerModalStore } from "@/widgets/TickerModal";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Tabs } from "@/widgets/Tabs";
 import { Tab } from "@/features/Tab.ts";
 import { Loader } from "@/shared/ui/Loader/Loader.tsx";
 
 export const TickersPage: FC = () => {
+  const [searchParams] = useSearchParams();
+  const initialTab = searchParams.get("tab") as Tab | null;
+
   const store = tickerModalStore;
 
   const [isLoading, setIsLoading] = useState(true);
   const [tabAData, setTabAData] = useState<ITicker[]>([]);
   const [tabBData, setTabBData] = useState<ITicker[]>([]);
-  const [activeTab, setActiveTab] = useState<Tab>(Tab.A);
+  const [activeTab, setActiveTab] = useState<Tab>(initialTab || Tab.A);
   const [error, setError] = useState<string | null>(null); // Добавлено состояние для ошибки
 
   const handleTabChange = (tab: Tab) => {
