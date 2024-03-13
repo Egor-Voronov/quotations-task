@@ -1,5 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
+import { Link } from "react-router-dom";
+import { PageLayout } from "@/shared/ui/PageLayout";
 
 export const AboutPage: FC = () => {
-  return <div>котировки</div>;
+  return (
+    <PageLayout>
+      <Link to={"/tickers"}>К котировкам</Link>
+    </PageLayout>
+  );
 };

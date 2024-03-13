@@ -1,3 +1,3 @@
-import { apiClient } from "./base";
+import { apiClient } from "./api-client.ts";
 
 export { apiClient };

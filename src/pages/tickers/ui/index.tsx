@@ -1,5 +1,6 @@
-import { FC } from "react";
+import type { FC } from "react";
+import { PageLayout } from "@/shared/ui/PageLayout";
 
 export const TickersPage: FC = () => {
-  return <div>тикерсы</div>;
+  return <PageLayout>rjnbrb</PageLayout>;
 };
