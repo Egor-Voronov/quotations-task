@@ -14,11 +14,11 @@ export const TickerModal: FC<ITickerModalProps> = ({
     <Modal showModal={showModal} onModalClose={onModalClose}>
       {data?.map((ticker) => {
         return ticker.tradeId === store.selectedTickerId ? (
-          <ul>
+          <ul key={ticker.tradeId}>
             <li>Имя котировки {ticker.symbol}</li>
             <li>Цена котировки {ticker.price}</li>
             <li>Лучшая цена котировки {ticker.bestBidPrice}</li>
-            <li>изменение цены котировки {ticker.percentChange}</li>
+            <li>Изменение цены котировки {ticker.percentChange}</li>
           </ul>
         ) : null;
       })}

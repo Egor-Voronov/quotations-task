@@ -5,6 +5,7 @@ import { tickerModalStore } from "@/widgets/TickerModal";
 import { Link } from "react-router-dom";
 import { Tabs } from "@/widgets/Tabs";
 import { Tab } from "@/features/Tab.ts";
+import { Loader } from "@/shared/ui/Loader.tsx";
 
 export const TickersPage: FC = () => {
   const store = tickerModalStore;
@@ -28,7 +29,6 @@ export const TickersPage: FC = () => {
           if (activeTab === Tab.B) setTabBData(tickerStore.tabB);
         } catch (err) {
           setIsLoading(false);
-          console.error(`Ошибка: ${err}`);
         }
       }
     };
@@ -40,14 +40,14 @@ export const TickersPage: FC = () => {
     return () => clearInterval(intervalId);
   }, [activeTab]);
 
-  // один таб не обновляется, если включен другой
+  // один таб не обновляется, если включен другой и если другая страница
 
   return (
     <>
       <PageLayout>
         <Link to={"/"}>О приложении</Link>
         {isLoading ? (
-          <div>Загрузка...</div>
+          <Loader />
         ) : (
           <div>
             <Tabs
@@ -56,7 +56,7 @@ export const TickersPage: FC = () => {
             />
             {(activeTab === Tab.A && tabAData.length === 0) ||
             (activeTab === Tab.B && tabBData.length === 0) ? (
-              <div>Загрузка...</div>
+              <Loader />
             ) : null}
             <div>
               <button onClick={() => handleTabChange(Tab.A)}>{Tab.A}</button>
