@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
 import { useEffect, useState } from "react";
 import { ITicker, useTickerStore } from "@/entities/tickers";
-import { TickerTable } from "@/widgets";
+import { TickerModal, TickerTable } from "@/widgets";
 import { Link } from "react-router-dom";
 
 export const TickersPage: FC = () => {
@@ -33,16 +33,20 @@ export const TickersPage: FC = () => {
   }, []);
 
   return (
-    <PageLayout>
-      <Link to={"/"}>О приложении</Link>
+    <>
+      <TickerModal />
 
-      {isLoading ? (
-        <div>Загрузка...</div>
-      ) : error ? (
-        <div>{error}</div>
-      ) : (
-        <TickerTable data={tabAData} />
-      )}
-    </PageLayout>
+      <PageLayout>
+        <Link to={"/"}>О приложении</Link>
+
+        {isLoading ? (
+          <div>Загрузка...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          <TickerTable data={tabAData} />
+        )}
+      </PageLayout>
+    </>
   );
 };

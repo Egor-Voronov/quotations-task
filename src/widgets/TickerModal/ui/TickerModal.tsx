@@ -9,5 +9,10 @@ export const TickerModal: FC = () => {
     store.closeModal();
   };
 
-  return <Modal showModal={store.showModal} onClose={handleClose}></Modal>;
+  return (
+    <Modal showModal={store.showModal} onClose={handleClose}>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
+      quidem.
+    </Modal>
+  );
 };
