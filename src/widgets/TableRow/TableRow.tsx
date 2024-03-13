@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { ITicker } from "@/entities/tickers";
-import styles from "../TickerTable.module.css";
+import styles from "@/shared/styles/table.module.css";
 
 const renderCell = <T extends string | number>(
   value: T,

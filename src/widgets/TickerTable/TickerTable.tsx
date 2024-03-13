@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import type { FC } from "react";
 import type { TickerTableProps } from "./TickerTable.types.ts";
-import { TableRow } from "./TableRow";
-import styles from "./TickerTable.module.css";
+import { TableRow } from "../TableRow";
+import styles from "@/shared/styles/table.module.css";
 
 export const TickerTable: FC<TickerTableProps> = ({ data }) => {
   const [changedCells, setChangedCells] = useState<Record<string, boolean>>({});
