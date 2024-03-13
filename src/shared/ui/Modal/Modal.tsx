@@ -17,8 +17,10 @@ export const Modal: FC<IModalLayoutProps> = ({
       {showModal &&
         createPortal(
           <div className={styles.modal} onClick={handleClose}>
-            <div className={styles.modalContent}>{children}</div>
-            <button onClick={handleClose}>Закрыть</button>
+            <div className={styles.modalContent}>
+              {children}
+              <button onClick={handleClose}>Закрыть</button>
+            </div>
           </div>,
           document.body,
         )}

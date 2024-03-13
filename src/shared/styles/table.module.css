@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.table tr:hover {
+    opacity: .3;
+}
+
 .table th {
     padding: 8px;
     border: 1px solid black;
