@@ -1,15 +1,22 @@
 import { FC } from "react";
 import { Modal } from "@/shared/ui/Modal";
-import { IModalLayoutProps } from "@/shared/ui/Modal/Modal.types.ts";
+import { ITickerModalProps } from "./TickerModal.types.ts";
+import { tickerModalStore } from "@/widgets/TickerModal";
 
-export const TickerModal: FC<IModalLayoutProps> = ({
+export const TickerModal: FC<ITickerModalProps> = ({
   showModal,
   onModalClose,
+  data,
 }) => {
+  const store = tickerModalStore;
+
   return (
     <Modal showModal={showModal} onModalClose={onModalClose}>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium,
-      quidem.
+      {data?.map((ticker) => {
+        return ticker.tradeId === store.selectedTickerId ? (
+          <div key={ticker.tradeId}>{ticker.symbol}</div>
+        ) : null;
+      })}
     </Modal>
   );
 };
