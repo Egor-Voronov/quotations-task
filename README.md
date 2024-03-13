@@ -7,4 +7,4 @@ npm install
 npm run dev
 ```
 
-# hhttps://main--willowy-scone-8d7256.netlify.app/
+[Деплой](hhttps://main--willowy-scone-8d7256.netlify.app/) 
