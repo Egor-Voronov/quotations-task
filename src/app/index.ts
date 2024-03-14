@@ -1,3 +1,2 @@
-import { router } from "@/app/router.tsx";
-
-export { router };
+export { App } from "./App.tsx";
+export { router } from "./router.tsx";
