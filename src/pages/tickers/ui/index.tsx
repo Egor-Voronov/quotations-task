@@ -14,7 +14,7 @@ export const TickersPage: FC = () => {
   const initialTab = searchParams.get("tab") as Tab | null;
   const navigate = useNavigate();
 
-  const store = tickerModalStore;
+  const modalStore = tickerModalStore;
 
   const [isLoading, setIsLoading] = useState(true);
   const [tabAData, setTabAData] = useState<ITicker[]>([]);
@@ -29,7 +29,7 @@ export const TickersPage: FC = () => {
 
   useEffect(() => {
     const fetchTickers = async () => {
-      if (!store.showModal) {
+      if (!modalStore.showModal) {
         try {
           await tickerStore.fetchTickers();
           setIsLoading(false);

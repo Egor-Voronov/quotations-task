@@ -8,7 +8,7 @@ import type {
 } from "./TableRow.types.ts";
 import { tickerModalStore } from "@/widgets/TickerModal";
 
-const store = tickerModalStore;
+const modalStore = tickerModalStore;
 
 const renderCell = <T extends string | number>({
   value,
@@ -26,7 +26,7 @@ const renderCell = <T extends string | number>({
 
 const onCellClick = ({ tradeId, onModalOpen }: IOnCellClickProps) => {
   if (onModalOpen) {
-    store.setSelectedTickerId(tradeId);
+    modalStore.setSelectedTickerId(tradeId);
     onModalOpen();
   }
 };

@@ -5,16 +5,16 @@ import { TickerTable } from "@/widgets/TickerTable";
 import { TickerModal, tickerModalStore } from "@/widgets/TickerModal";
 
 export const Tabs: FC<ITabsProps> = ({ data, activeTab }) => {
-  const store = tickerModalStore;
-  const [localShowModal, setLocalShowModal] = useState(store.showModal);
+  const modalStore = tickerModalStore;
+  const [localShowModal, setLocalShowModal] = useState(modalStore.showModal);
 
   const handleClose = () => {
-    store.closeModal();
+    modalStore.closeModal();
     setLocalShowModal(false);
   };
 
   const handleOpen = () => {
-    store.openModal();
+    modalStore.openModal();
     setLocalShowModal(true);
   };
 
