@@ -1,4 +1,4 @@
-import { ITickerResponse, ITicker } from "@/entities/tickers";
+import type { ITickerResponse, ITicker } from "@/entities/tickers";
 
 const calculatePercentChange = (
   currentPrice: string,

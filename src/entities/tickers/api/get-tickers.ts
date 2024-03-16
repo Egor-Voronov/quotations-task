@@ -1,4 +1,4 @@
-import type { ITickerResponse, ITicker } from "../tickers.types.ts";
+import type { ITickerResponse, ITicker } from "@/entities/tickers";
 import { apiClient } from "@/shared/api/base";
 import { mapTickers } from "@/entities/tickers/api/mapper/map-tickers.ts";
 

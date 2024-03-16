@@ -1,5 +1,5 @@
 import { API_URL } from "@/shared/config";
-import type { IApiResponse } from "./base.types.ts";
+import type { IApiResponse } from "./base-api.types.ts";
 
 export class ApiClient {
   private readonly baseUrl: string;

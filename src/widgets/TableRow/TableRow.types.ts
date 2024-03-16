@@ -1,4 +1,4 @@
-import { ITicker } from "@/entities/tickers";
+import type { ITicker } from "@/entities/tickers";
 
 export interface ITableRowTypes {
   data: ITicker;
@@ -8,6 +8,7 @@ export interface ITableRowTypes {
 
 export interface IRenderCellTypes<T> extends Omit<ITableRowTypes, "data"> {
   value: T;
+  tradeId: string;
 }
 
 export interface IOnCellClickProps {

@@ -1,5 +1,5 @@
-import { ITicker } from "@/entities/tickers";
-import { Tab } from "@/features/Tab.ts";
+import type { ITicker } from "@/entities/tickers";
+import type { Tab } from "@/features/Tab.ts";
 
 export interface ITabsProps {
   data: ITicker[];

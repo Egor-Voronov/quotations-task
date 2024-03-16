@@ -1,6 +1,6 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Modal } from "@/shared/ui/Modal";
-import { ITickerModalProps } from "./TickerModal.types.ts";
+import type { ITickerModalProps } from "./TickerModal.types.ts";
 import { tickerModalStore } from "@/widgets/TickerModal";
 
 export const TickerModal: FC<ITickerModalProps> = ({

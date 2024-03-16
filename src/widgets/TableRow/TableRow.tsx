@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import React from "react";
+import type { FC } from "react";
 import styles from "@/shared/styles/table.module.css";
-import {
+import type {
   ITableRowTypes,
   IOnCellClickProps,
   IRenderCellTypes,
-} from "@/widgets/TableRow/TableRow.types.ts";
+} from "./TableRow.types.ts";
 import { tickerModalStore } from "@/widgets/TickerModal";
 
 const store = tickerModalStore;
@@ -14,7 +15,7 @@ const renderCell = <T extends string | number>({
   tradeId,
   isChanged,
   onModalOpen,
-}: IRenderCellTypes<T> & { tradeId: string }) => (
+}: IRenderCellTypes<T>) => (
   <td
     onClick={() => onCellClick({ tradeId, onModalOpen })}
     className={isChanged ? styles.changed : ""}

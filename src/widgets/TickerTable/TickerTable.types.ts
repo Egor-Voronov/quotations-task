@@ -1,4 +1,4 @@
-import { ITicker } from "@/entities/tickers";
+import type { ITicker } from "@/entities/tickers";
 
 export interface ITickerTableProps {
   data: ITicker[];

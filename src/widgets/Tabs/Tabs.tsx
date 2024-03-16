@@ -1,5 +1,6 @@
-import { FC, useState } from "react";
-import { ITabsProps } from "./Tabs.types.ts";
+import { useState } from "react";
+import type { FC } from "react";
+import type { ITabsProps } from "./Tabs.types.ts";
 import { TickerTable } from "@/widgets/TickerTable";
 import { TickerModal, tickerModalStore } from "@/widgets/TickerModal";
 

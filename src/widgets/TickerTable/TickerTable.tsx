@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import type { FC } from "react";
 import type { ITickerTableProps } from "./TickerTable.types.ts";
-import { TableRow } from "../TableRow";
+import { TableRow } from "@/widgets/TableRow";
 import styles from "@/shared/styles/table.module.css";
 
 export const TickerTable: FC<ITickerTableProps> = ({ data, onModalOpen }) => {

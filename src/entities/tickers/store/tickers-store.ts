@@ -1,6 +1,6 @@
 import type { ITicker } from "../tickers.types.ts";
 import { observable, makeObservable, action } from "mobx";
-import { tickersApi } from "../index.ts";
+import { tickersApi } from "@/entities/tickers";
 
 class TickerStore {
   constructor() {

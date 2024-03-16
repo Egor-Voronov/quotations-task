@@ -1,6 +1,8 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import type { FC } from "react";
 import { PageLayout } from "@/shared/ui/PageLayout";
-import { ITicker, tickerStore } from "@/entities/tickers";
+import { tickerStore } from "@/entities/tickers";
+import type { ITicker } from "@/entities/tickers";
 import { tickerModalStore } from "@/widgets/TickerModal";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Tabs } from "@/widgets/Tabs";
