@@ -6,5 +6,7 @@ npm install
 ```sh
 npm run dev
 ```
-# Деплой
+# Deploy
 hhttps://main--willowy-scone-8d7256.netlify.app
+## P.S - api could not work without extension
+https://webextension.org/listing/access-control.html
