@@ -2,7 +2,7 @@ import React from "react";
 import type { FC } from "react";
 import styles from "@/shared/styles/table.module.css";
 import type {
-  ITableRowTypes,
+  ITickerTableRowTypes,
   IOnCellClickProps,
   IRenderCellTypes,
 } from "./TableRow.types.ts";
@@ -31,7 +31,7 @@ const onCellClick = ({ tradeId, onModalOpen }: IOnCellClickProps) => {
   }
 };
 
-export const TableRow: FC<ITableRowTypes> = ({
+export const TickerTableRow: FC<ITickerTableRowTypes> = ({
   data,
   isChanged,
   onModalOpen,

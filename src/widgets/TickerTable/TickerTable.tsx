@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import type { FC } from "react";
 import type { ITickerTableProps } from "./TickerTable.types.ts";
-import { TableRow } from "@/widgets/TableRow";
+import { TickerTableRow } from "./TickerTableRow";
 import styles from "@/shared/styles/table.module.css";
 
 export const TickerTable: FC<ITickerTableProps> = ({ data, onModalOpen }) => {
@@ -46,7 +46,7 @@ export const TickerTable: FC<ITickerTableProps> = ({ data, onModalOpen }) => {
         </thead>
         <tbody className={styles.tableContent}>
           {data.map((item) => (
-            <TableRow
+            <TickerTableRow
               onModalOpen={onModalOpen}
               key={item.tradeId}
               data={item}

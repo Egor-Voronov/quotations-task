@@ -1,12 +1,13 @@
 import type { ITicker } from "@/entities/tickers";
 
-export interface ITableRowTypes {
+export interface ITickerTableRowTypes {
   data: ITicker;
   isChanged: boolean;
   onModalOpen: () => void;
 }
 
-export interface IRenderCellTypes<T> extends Omit<ITableRowTypes, "data"> {
+export interface IRenderCellTypes<T>
+  extends Omit<ITickerTableRowTypes, "data"> {
   value: T;
   tradeId: string;
 }

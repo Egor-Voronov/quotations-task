@@ -1,5 +1,5 @@
 import { observable, makeObservable, action } from "mobx";
-import { BaseModalStore } from "@/shared/model/base-modal-store.ts";
+import { BaseModalStore } from "@/shared/ui/Modal";
 
 class TickerModalStore extends BaseModalStore {
   selectedTickerId: string | null = null;
